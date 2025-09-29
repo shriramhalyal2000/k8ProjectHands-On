@@ -1,0 +1,6 @@
+appVersion: apps/v1
+kind: pod
+metadata:
+  replica:
+    name:
+    app: 
