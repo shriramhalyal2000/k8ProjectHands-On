@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: myapp
-  replicas: 3
+  replica: 3
   template: #structure and spec of pod begin with metadata and end with spec and container
     metadata:
       name: nginx-2
