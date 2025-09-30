@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myapp-rc
+  labels:
+    app: myapp
+    type: front-end
+  namespace: kube-practice
+spec:
+  template:
+    metadata:
+      name: myapp-rc
+      labels:
+        app: myapp
+        type: front-end
+      namespace: kube-practice
+    spec:
+      containers:
+        - name: myapp-pod
+          image: nginx
+  replicas: 3 #template and replicas belong in same indentation
