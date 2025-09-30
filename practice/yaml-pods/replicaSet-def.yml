@@ -4,15 +4,15 @@ metadata:
   name: myapp
   labels:
     app: myapp
-    type: front-end
+    tier: front-end
   namespace: kube-practice
-specs:
+spec:
   template:
     metadata:
       name: myapp
       labels:
         app: myapp
-        type: front-end
+        tier: front-end
       namespace: kube-practice
     spec:
       containers:
