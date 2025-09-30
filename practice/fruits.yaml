@@ -1,0 +1,10 @@
+Fruits:
+  Apple:
+  - Cal: 48cal
+  - Protien: 7gm
+  - Energy/Cal: 7kl
+  Orange:
+    - Cal: 38cal
+    - Protien: 6gm
+    - Energy/Cal: 6kl
+    

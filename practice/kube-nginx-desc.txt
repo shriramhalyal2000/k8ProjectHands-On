@@ -1,0 +1,55 @@
+Name:             kube-nginx-cb64c7b8c-q9wzn
+Namespace:        kube-practice
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Sun, 28 Sep 2025 11:02:37 +0000
+Labels:           app=kube-nginx
+                  pod-template-hash=cb64c7b8c
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.62
+IPs:
+  IP:           10.244.0.62
+Controlled By:  ReplicaSet/kube-nginx-cb64c7b8c
+Containers:
+  nginx:
+    Container ID:   docker://ecd35b9a9430be533dafeb20ebcc168965d6cf3908d67c5466800d0e4569efd7
+    Image:          nginx
+    Image ID:       docker-pullable://nginx@sha256:d5f28ef21aabddd098f3dbc21fe5b7a7d7a184720bc07da0b6c9b9820e97f25e
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Sun, 28 Sep 2025 11:02:42 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-tjrpd (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       True 
+  ContainersReady             True 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-tjrpd:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  5m18s  default-scheduler  Successfully assigned kube-practice/kube-nginx-cb64c7b8c-q9wzn to minikube
+  Normal  Pulling    5m18s  kubelet            Pulling image "nginx"
+  Normal  Pulled     5m14s  kubelet            Successfully pulled image "nginx" in 3.978s (3.978s including waiting). Image size: 192385289 bytes.
+  Normal  Created    5m14s  kubelet            Created container: nginx
+  Normal  Started    5m14s  kubelet            Started container nginx
+

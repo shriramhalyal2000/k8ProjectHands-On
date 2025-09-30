@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod # shoul d be ssame as file name as here myapp-pod.yaml
+  labels:
+    app: myapp
+    type: front-end
+  namespace: kube-practice
+spec:
+  containers:
+   - name: nginx-container
+     image: nginx
+
+# kubectl create -f <pod-filename.yaml>
