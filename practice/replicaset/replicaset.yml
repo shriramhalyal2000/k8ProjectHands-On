@@ -1,11 +1,11 @@
 apiVersion: apps/v1
-kind: ReplicasSet
+kind: ReplicaSet
 metadata:
   name: myapp #replicaset name
   labels:
     app: myapp
     tier: front-end
-  namespace: kune-practice
+  namespace: kube-practice
 spec:
   selector:
     matchLabels:
