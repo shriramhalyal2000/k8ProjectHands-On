@@ -6,18 +6,20 @@ metadata:
     app: myapp
     tier: front-end
   namespace: kube-practice
+
 spec:
   selector:
     matchLabels:
       app: myapp
-  replica: 3
+  replicas: 3
   template: #structure and spec of pod begin with metadata and end with spec and container
     metadata:
       name: nginx-2
       labels:
         app: myapp
         tier: front-end
-      namespace: kube-practice
+
     spec: # specs of conatiners that have to be run
       containers:
         - name: nginx
+          image: nginx
