@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-depl
+  labels:
+    app: myapp
+    tire: front-end
+  namespace: kube-practice
+spec:
+  selector:
+    matchlabels:
+      app: my-app
+  replicas: 3
+  template:
+    metadata:
+      name: my-app
+      labels:
+        app: my-app
+        tier: front-end
+      namespace: kube-practice
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ContainerPort: 80

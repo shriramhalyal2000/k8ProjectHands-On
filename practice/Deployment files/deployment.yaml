@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+    tier: front-end
+  namespace: kube-practice
+
+spec: #from replicaset specs
+  selector:
+    matchlabels:
+      app: nginx-2
+  replicas: 3
+  template: #template alwasy start from metadata
+    metadata:
+      name: my-app
+      labels:
+        app: my-app
+        tier: front-end
+      namespace: kube-practice
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
