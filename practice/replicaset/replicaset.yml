@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp #replicaset name
+  labels:
+    app: myapp
+    tier: front-end
+  namespace: kube-practice
+
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 3
+  template: #structure and spec of pod begin with metadata and end with spec and container
+    metadata:
+      name: nginx-2
+      labels:
+        app: myapp
+        tier: front-end
+
+    spec: # specs of conatiners that have to be run
+      containers:
+        - name: nginx
+          image: nginx

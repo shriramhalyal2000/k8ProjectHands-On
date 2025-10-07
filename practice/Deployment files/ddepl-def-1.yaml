@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-depl-update
+  labels:
+    app: myapp
+    tier: web-server
+  namespace: default
+spec:
+  template:
+    metadata:
+      name: myapp-replicaSet
+      labels:
+        app: myapp
+        tier: web-server
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+          ports:
+            - containerPort: 80
+             # hostPort: 80
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 4
+  strategy:
+    type: Recreate
