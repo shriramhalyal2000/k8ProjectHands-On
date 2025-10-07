@@ -1,0 +1,17 @@
+apiVersion: v1
+kinbd: Service
+metadata:
+  name: nginx-service
+  labels:
+    app: myapp
+    type: frontend
+spec:
+  type: NodePort
+  ports:
+    - targetPOrt: 80
+      port: 80
+      nodePort: 30001
+  Prototcol: TCP
+  selector:
+    app: myapp
+    type: myapp
