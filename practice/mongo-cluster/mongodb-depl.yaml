@@ -20,18 +20,27 @@ spec:
           image: mongo
           port:
             - containePort: 27017
-              
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret
+                  value: monog-root-username
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: monog-secret
+                  key: mongo-root-password
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: mongo-Service
+  namspace: kube-mongo
 spec:
-  type: NodePort
   selector:
     app: mongodb
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-      NodePort: 31700
+      port: 27017
+      targetPort: 27017
