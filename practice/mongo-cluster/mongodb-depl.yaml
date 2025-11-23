@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-depl
+  labels:
+    app: mongodb
+    tier: database
+  namespace: kube-mongo
+spec:
+  seelector:
+    matchLabels:
+      app: mongodb
+  replacas: 1
+  template:
+    metadata: #doesnot need name of pod because they inherit deployment name
+      app: mongodb
+    spec:
+      containers:
+        - name: mongoContainer
+          image: mongo
+    
